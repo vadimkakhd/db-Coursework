@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+   <body>
+
+      <h2 style = "text-align: center;">Login Form</h2>
+
+
+
+      <form action = "http://localhost:5000/" method = post>
+         <fieldset>
+            <legend>Add user Form</legend>
+             {{ myform.hidden_tag() }}
+            <div>
+                {{ myform.username.label }}      {{ myform.username }} <br>
+                {% for message in myform.username.errors %}
+                         <div>{{ message }}</div>
+                {% endfor %}
+
+                {{ myform.password.label }}      {{ myform.password }}<br>
+                {% for message in myform.password.errors %}
+                         <div>{{ message }}</div>
+                {% endfor %}
+
+                {{ myform.login.label }}      {{ myform.login }}<br>
+                {% for message in myform.login.errors %}
+                         <div>{{ message }}</div>
+                {% endfor %}
+
+                {{ myform.name.label }}      {{ myform.name }}<br>
+                {{ myform.surname.label }}      {{ myform.surname }}<br>
+
+                {{ myform.faculty.label }}      {{ myform.faculty }}<br>
+                {% for message in myform.faculty.errors %}
+                         <div>{{ message }}</div>
+                {% endfor %}
+
+                {{ myform.course.label }}      {{ myform.course }}<br>
+                {% for message in myform.course.errors %}
+                         <div>{{ message }}</div>
+                {% endfor %}
+
+               {{ myform.addbutton }}
+            </div>
+
+         </fieldset>
+          <div>
+                  {% for message in users %}
+                         <div>{{ message }}</div>
+                {% endfor %}
+          </div>
+
+      </form>
+
+   </body>
+</html>
